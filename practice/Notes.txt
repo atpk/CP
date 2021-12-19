@@ -17,5 +17,3 @@ Stacks
 
 #include<stacks>
 
-if O(n^2) and for(i:0->n){for(j=f(i))} => use stacks
-makes it O(n) almost

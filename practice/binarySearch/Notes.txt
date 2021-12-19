@@ -1,0 +1,11 @@
+for rotations -> add n and take modulo to avoid -ve
+			take modulo to avoid out of bound
+
+for min -> a[i]<a[i-1] && a[i]<a[i+1]
+
+for infinite sorted arrays  -> first take start=0 and end=1;
+					then start=end and end=end*2
+					until key is bounded by start and end
+					
+					then binary search
+

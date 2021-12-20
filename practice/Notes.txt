@@ -17,3 +17,6 @@ Stacks
 
 #include<stacks>
 
+if O(n^2) and for(i:some range){for(j:f(i){...}}
+	then use stacks
+

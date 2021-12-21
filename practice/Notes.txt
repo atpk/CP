@@ -20,3 +20,14 @@ Stacks
 if O(n^2) and for(i:some range){for(j:f(i){...}}
 	then use stacks
 
+
+////////////////////
+
+Heap
+
+k'th smallest/largest element(s) in array
+	then use max/min heap resp.
+k-sorted (nearly sorted) to sorted -> use heap
+
+priority_queue <int> maxh;
+priority_queue <int, vector<int>, greater<int> > minh;

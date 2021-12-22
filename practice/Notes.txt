@@ -31,3 +31,14 @@ k-sorted (nearly sorted) to sorted -> use heap
 
 priority_queue <int> maxh;
 priority_queue <int, vector<int>, greater<int> > minh;
+
+////////////////////////
+
+Recursion
+
+what choices are availabe and decision to be taken
+
+recrsion tree: #branches = #choices and travelling one branch is decision
+		at every level input becomes smaller
+		finally merge all nodes.
+Induction-Base-Hypothesis

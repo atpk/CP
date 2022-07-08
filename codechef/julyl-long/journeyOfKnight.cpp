@@ -13,23 +13,19 @@ bool check(int x, int y){
     return false;
 }
 
-queue<pair<int,int>> q;
-vector<vector<bool>> vis(8, vector<bool>(8, false));
-
 int bfs(int x1, int y1, int x2, int y2){
-    while (!q.empty())
-    {
-        q.pop();
-    }
-    
+    queue<pair<int,int>> q;
+    vector<vector<bool>> vis(8, vector<bool>(8, false));
     vector<vector<int>> temp = {{1,1,-1,-1,2,2,-2,-2},{2,-2,2,-2,1,-1,1,-1}};
 
     q.push({x1,y1});
     int n=1;
 
+    cout << q.front().first << " " << q.empty() << endl;
     int steps=0;
     while (!q.empty())
     {
+        cout << steps << endl;
         int x=0;
         pair<int,int> p;
 
@@ -68,10 +64,10 @@ void solve(){
     int x1=8,y1=8,x2=7,y2=6;
     // cin >> x1 >> y1 >> x2 >> y2;
 
-    // cout << x1 << x2 << y1 << y2 << endl;
+    cout << x1 << x2 << y1 << y2 << endl;
     //bfs
     int steps = bfs(x1,y1,x2,y2);
-
+    cout << steps << endl;
     if ((100-steps)%2 == 1)
     {
         cout << "NO\n";
@@ -90,7 +86,7 @@ int main(){
     FAST1;
     FAST2;
     ll t=1;
-    cin>>t;
+    // cin>>t;
     while(t--){
         solve();
     }

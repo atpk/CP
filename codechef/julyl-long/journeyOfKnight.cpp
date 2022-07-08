@@ -15,17 +15,17 @@ bool check(int x, int y){
 
 int bfs(int x1, int y1, int x2, int y2){
     queue<pair<int,int>> q;
-    vector<vector<bool>> vis(8, vector<bool>(8, false));
+    vector<vector<bool>> vis(9, vector<bool>(9, false));
     vector<vector<int>> temp = {{1,1,-1,-1,2,2,-2,-2},{2,-2,2,-2,1,-1,1,-1}};
 
     q.push({x1,y1});
     int n=1;
-
+    // cout << "hELL" << endl;
     cout << q.front().first << " " << q.empty() << endl;
     int steps=0;
     while (!q.empty())
     {
-        cout << steps << endl;
+        // cout << steps << endl;
         int x=0;
         pair<int,int> p;
 
@@ -43,7 +43,7 @@ int bfs(int x1, int y1, int x2, int y2){
             // next level
             for (int i = 0; i < 8; i++)
             {
-                if (check(x+temp[0][i],y+temp[1][i]) && !vis[x+temp[0][i]][y+temp[1][i]])
+                if (check(x+temp[0][i],y+temp[1][i]) && vis[x+temp[0][i]][y+temp[1][i]]==false)
                 {
                     x++;
                     q.push({x+temp[0][i],y+temp[1][i]});

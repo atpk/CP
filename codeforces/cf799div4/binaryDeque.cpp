@@ -4,7 +4,7 @@ using namespace std;
 #define FAST1 ios_base::sync_with_stdio(false);
 #define FAST2 cin.tie(NULL);
 
-
+/*
 void solve(){
     //input
     int n,s;
@@ -70,6 +70,41 @@ void solve(){
     cout<<ans<<endl;
     
     return;
+}
+*/
+
+void solve()
+{
+	int n, s;
+	cin >> n >> s;
+	vector<int> a(n);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	vector<int> ones(n + 1, 0);
+	for (int i = 1; i <= n; i++)
+	{
+		ones[i] = ones[i - 1] + (a[i - 1] == 1);
+	}
+	if (ones[n] < s)
+	{
+		cout << -1 << endl;
+		return;
+	}
+	int ans = n;
+	for (int i = 0; i <= n; i++)
+	{
+		int pos = upper_bound(ones.begin(), ones.end(), s + ones[i]) - ones.begin();
+        cout<<pos<<endl;
+		pos--;
+		if (ones[pos] == (s + ones[i]))
+		{
+			int tmp = (n - pos) + i;
+			ans = min(tmp, ans);
+		}
+	}
+	cout << ans << endl;
 }
 
 
